@@ -1,65 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIVA | SOUND</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;600&display=swap');
+        /* Fonts: Modern & Professional */
+        @import url('https://fonts.googleapis.com/css2?family=Unica+One&family=Montserrat:wght@200;400;700&display=swap');
         
-        .font-heading { font-family: 'Syncopate', sans-serif; }
-        .font-body { font-family: 'Inter', sans-serif; }
+        /* Modern Wide Font for Headlines */
+        .font-heading { font-family: 'Unica One', cursive; }
+        /* Clean body font */
+        .font-body { font-family: 'Montserrat', sans-serif; }
         
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Fixed background setup */
+        .artist-background {
+            /* OPTION 1: Place your image in the same folder and call it civa.png */
+            background-image: url('image_1.png');
+
+            /* OPTION 2: Use a high-quality, similar image for mockups if you don't have the file */
+            /* background-image: url('https://i.ibb.co/Xz95m5z/civa-portrait.jpg'); */
+
+            background-size: cover;
+            background-position: center 30%; /* Focus on the face, adjusting for screen sizes */
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* This makes the content scroll OVER the photo */
         }
     </style>
 </head>
-<body class="bg-black text-white font-body">
+<body class="bg-black text-white font-body artist-background min-h-screen">
 
-    <nav class="flex justify-between items-center p-6 lg:px-12">
-        <div class="text-xl font-bold tracking-tighter uppercase font-heading text-[#46B4B1]">CIVA</div>
-        <div class="hidden md:flex space-x-8 text-xs uppercase tracking-[0.2em] opacity-70">
-            <a href="#" class="hover:text-[#46B4B1] transition">Music</a>
-            <a href="#" class="hover:text-[#46B4B1] transition">Gallery</a>
-            <a href="#" class="hover:text-[#46B4B1] transition">Contact</a>
-        </div>
-    </nav>
+    <div class="bg-black/40 min-h-screen flex flex-col relative">
 
-    <main class="relative min-h-[80vh] flex flex-col justify-center items-center px-6 text-center">
-        
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#46B4B1] opacity-10 blur-[120px] -z-10"></div>
+        <header class="fixed top-0 left-0 w-full glass z-50">
+            <nav class="flex justify-between items-center px-6 lg:px-12 py-5">
+                <div class="text-3xl font-heading text-[#46B4B1] tracking-widest">CIVA</div>
+                
+                <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-[0.3em]">
+                    <a href="#" class="hover:text-[#46B4B1] transition-all">Latest</a>
+                    <a href="#" class="hover:text-[#46B4B1] transition-all">Bio</a>
+                    <a href="#" class="hover:text-[#46B4B1] transition-all">EPK</a>
+                    <a href="#" class="hover:text-[#46B4B1] transition-all">Contact</a>
+                </div>
+            </nav>
+        </header>
 
-        <p class="text-[#46B4B1] text-xs tracking-[0.5em] uppercase mb-4 animate-pulse">Official Artist Portfolio</p>
-        
-        <h1 class="font-heading text-5xl md:text-8xl mb-6 tracking-tighter">
-            CIVA <span class="text-transparent border-b border-white" style="-webkit-text-stroke: 1px white;">SOUND</span>
-        </h1>
+        <main class="flex-grow flex flex-col items-center justify-end px-6 pt-32 pb-20 md:pb-12 text-center relative z-10">
+            
+            <div class="absolute inset-0 bg-radial-gradient(ellipse_at_center,_#46B4B105,_transparent_70%) pointer-events-none"></div>
 
-        <p class="max-w-md text-gray-400 text-sm leading-relaxed mb-10">
-            More than just music. A digital experience designed for the next generation of sound. 
-        </p>
+            <p class="text-xs uppercase tracking-[0.6em] text-white/60 mb-3 md:mb-5 font-light">Official Portfolio</p>
 
-        <div class="flex flex-col md:flex-row gap-4">
-            <button class="bg-[#46B4B1] text-black px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-white transition-all duration-300">
-                Stream Latest Single
-            </button>
-            <button class="glass-card px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
-                View EPK
-            </button>
-        </div>
+            <h1 class="font-heading text-6xl md:text-[10rem] mb-6 md:mb-10 leading-[0.85] tracking-tight">
+                CIVA <span class="text-white/20" style="-webkit-text-stroke: 1px rgba(255,255,255,0.3);">SOUND</span>
+            </h1>
 
-        <div class="mt-16 w-full max-w-2xl glass-card p-4 rounded-lg flex items-center gap-4">
-            <div class="w-16 h-16 bg-gray-800 rounded flex-shrink-0 animate-pulse"></div>
-            <div class="text-left">
-                <p class="text-xs text-[#46B4B1] font-bold uppercase">Now Trending</p>
-                <p class="text-sm font-semibold">Track Title — Unreleased</p>
+            <p class="max-w-xl text-gray-300 text-sm md:text-base leading-relaxed mb-10 md:mb-16 font-extralight px-4">
+                Redefining sonic engineering. Where precision meets artistry. A new era of creative impact.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-5">
+                <button class="bg-[#46B4B1] text-black px-12 py-5 text-sm font-bold uppercase tracking-widest rounded-sm hover:scale-105 transition-all duration-300 shadow-lg">
+                    Stream Latest Project
+                </button>
+                <button class="glass px-12 py-5 text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-white/10 transition-all duration-300">
+                    Industry Contact
+                </button>
             </div>
-            <div class="ml-auto flex gap-3">
-                <div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">▶</div>
+            
+            <div class="mt-20 opacity-40 text-xs tracking-wider animate-pulse hidden md:block">↓ &nbsp;EXPLORE BIO &nbsp;↓</div>
+
+        </main>
+        <section class="pb-20 px-6">
+            <div class="max-w-4xl mx-auto glass p-8 rounded-lg flex flex-col md:flex-row items-center gap-8">
+                <div class="w-48 h-48 bg-gray-800 rounded shadow-2xl flex-shrink-0 relative group overflow-hidden">
+                    <img src="image.png" class="opacity-50 group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-12 h-12 bg-[#46B4B1] rounded-full flex items-center justify-center text-black">▶</div>
+                    </div>
+                </div>
+                
+                <div class="flex-grow text-center md:text-left">
+                    <h3 class="font-heading text-2xl mb-2">LATEST RELEASE</h3>
+                    <p class="text-[#46B4B1] font-bold mb-4 tracking-widest text-sm">SINGLE / 2026</p>
+                    <div class="space-y-4">
+                        <div class="h-1 bg-white/10 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-[#46B4B1] w-1/3"></div>
+                        </div>
+                        <div class="flex justify-between text-[10px] tracking-widest opacity-50">
+                            <span>01:12</span>
+                            <span>03:45</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </main>
+        </section>
+    </div>
 
 </body>
 </html>
